@@ -42,7 +42,7 @@ p+ geom_vline(aes(xintercept=mean(kkardashtemp)),
 print(paste('mean = ', mean(my1000$kkardashtemp),' sd = ',sd(my1000$kkardashtemp)))
 ```
 
-```{r}
+```{r include=TRUE,echo=FALSE}
 numb=2
 Hdata = Homers_data[sample(1:1000, size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
@@ -58,7 +58,19 @@ p
             color="blue", linetype="dashed", size=1)
 print(paste('mean = ', mean(my1000$k2),' sd = ',sd(my1000$k2)))
 
+
+cltSD2 <- sd(my1000$kkardashtemp) / sqrt(numb)
+cltMean2 <- 50
+diffSD2 <- abs(sd(my1000$k2)-cltSD2)
+diffMean2 <- abs(mean(my1000$k2)-cltMean2)
+
+cat("Expected SD for n =", numb, ": ", cltSD2, "\n")
+cat("Expected Mean for n =", numb, ": ", cltMean2, "\n\n")
+cat("Difference in SD = ", diffSD2, "\n")
+cat("Difference in Mean = ", diffMean2, "\n")
+
 ```
+
 ## We expect the sample mean to be close to population and the standev to get smaller by the ratio of one to the sample size. In this case 1/sqrt(2)
 
 ### There are 3 peaks in the density plot. You pick two people you can get MM,MF.FM,or FF. these are all equally likey so the little peak on left is all the FF's while the little peak on the right is all the MM's so the big one in the middle is both the MF and FM in the same bag so-to-speak.  
