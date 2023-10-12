@@ -75,7 +75,7 @@ cat("Difference in Mean = ", diffMean2, "\n")
 
 ### There are 3 peaks in the density plot. You pick two people you can get MM,MF.FM,or FF. these are all equally likey so the little peak on left is all the FF's while the little peak on the right is all the MM's so the big one in the middle is both the MF and FM in the same bag so-to-speak.  
 
-```{r}
+```{r include=TRUE,echo=FALSE}
 numb = 4
 Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
@@ -93,6 +93,16 @@ p + ggtitle("n = 4") +
   xlab("temperature") + ylab(" density")
 
 print(paste('mean = ', mean(my1000$k4),' sd = ',sd(my1000$k4)))
+
+cltSD4 <- sd(my1000$kkardashtemp) / sqrt(numb)
+cltMean4 <- 50
+diffSD4 <- abs(sd(my1000$k4)-cltSD4)
+diffMean4 <- abs(mean(my1000$k4)-cltMean4)
+
+cat("Expected SD for n =", numb, ": ", cltSD4, "\n")
+cat("Expected Mean for n =", numb, ": ", cltMean4, "\n\n")
+cat("Difference in SD = ", diffSD4, "\n")
+cat("Difference in Mean = ", diffMean4, "\n")
 
 ```
 
