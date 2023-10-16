@@ -63,7 +63,6 @@ cltSD2 <- sd(my1000$kkardashtemp) / sqrt(numb)
 cltMean2 <- 50
 diffSD2 <- abs(sd(my1000$k2)-cltSD2)
 diffMean2 <- abs(mean(my1000$k2)-cltMean2)
-
 cat("Expected SD for n =", numb, ": ", cltSD2, "\n")
 cat("Expected Mean for n =", numb, ": ", cltMean2, "\n\n")
 cat("Difference in SD = ", diffSD2, "\n")
@@ -98,7 +97,6 @@ cltSD4 <- sd(my1000$kkardashtemp) / sqrt(numb)
 cltMean4 <- 50
 diffSD4 <- abs(sd(my1000$k4)-cltSD4)
 diffMean4 <- abs(mean(my1000$k4)-cltMean4)
-
 cat("Expected SD for n =", numb, ": ", cltSD4, "\n")
 cat("Expected Mean for n =", numb, ": ", cltMean4, "\n\n")
 cat("Difference in SD = ", diffSD4, "\n")
